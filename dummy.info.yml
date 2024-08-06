@@ -1,0 +1,4 @@
+name: dummy
+description: dummy module for action testing
+core_version_requirement: ^10 || ^11
+type: module

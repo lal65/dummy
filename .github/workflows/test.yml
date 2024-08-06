@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  testing:
+    name: Dummy test
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Custom action
+        uses: lal65/drupal-module-qa-action@latest
+        with:
+          mysql_version: '8.0'
+          php_version: '8.3'
+          drupal_version: '10.3.x-dev'
+          module_name: 'unused'

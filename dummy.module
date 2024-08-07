@@ -1,0 +1,3 @@
+dummy_x_hook_x($varz) {
+//this gonna fail sniffs hard.
+}

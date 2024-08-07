@@ -12,11 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        include:
+          - profile: 'current-major'
+          - profile: 'next-major'
     steps:
       - name: Custom action
         uses: lal65/drupal-module-qa-action@main
         with:
-          mysql_version: '8.0'
-          php_version: '8.3'
-          drupal_version: '10.3.x-dev'
-          module_name: 'unused'
+          profile: ${{ matrix.profile }}
